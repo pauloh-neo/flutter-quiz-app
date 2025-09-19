@@ -25,12 +25,13 @@ class _HomeScreenState extends State<HomeScreen> {
             'Learn Flutter the fun way!',
             style: TextStyle(color: Colors.white, fontSize: 20),
           ),
-          OutlinedButton(
+          OutlinedButton.icon(
             onPressed: () {},
             style: OutlinedButton.styleFrom(
               foregroundColor: Colors.white,
             ),
-            child: const Text(
+            icon: const Icon(Icons.arrow_right_alt),
+            label: const Text(
               'Start Quiz',
             ),
           ),
