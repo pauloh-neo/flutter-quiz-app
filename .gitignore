@@ -1,0 +1,48 @@
+# Flutter/Dart/Pub related
+.dart_tool/
+.packages
+.pub/
+build/
+flutter_*.png
+*.lock
+
+# Project metadata
+.metadata
+*.iml
+*.ipr
+*.iws
+.idea/
+.vscode/
+
+# Android
+**/android/app/build/
+**/android/build/
+**/android/.gradle/
+**/android/captures/
+**/android/local.properties
+
+# iOS
+**/ios/Flutter/Flutter.framework
+**/ios/Flutter/Flutter.podspec
+**/ios/Pods/
+**/ios/.symlinks/
+**/ios/Flutter/Generated.xcconfig
+**/ios/Runner.xcworkspace/
+**/ios/Runner/GeneratedPluginRegistrant.*
+
+# Web
+**/web/.dart_tool/
+
+# Windows
+**/windows/Flutter/ephemeral/
+
+# Linux
+**/linux/flutter/
+
+# macOS
+**/macos/Flutter/ephemeral/
+
+# Misc
+*.log
+*.tmp
+*.swp
