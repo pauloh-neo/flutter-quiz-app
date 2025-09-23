@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class HomeScreen extends StatelessWidget {
+  const HomeScreen(this.startQuiz, {super.key});
 
-  @override
-  State<HomeScreen> createState() {
-    return _HomeScreenState();
-  }
-}
+  final void Function() startQuiz;
 
-class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -20,13 +15,15 @@ class _HomeScreenState extends State<HomeScreen> {
           Image.asset(
             'assets/quiz-images/quiz-logo.png',
             width: 200,
+            // Better way to add Opacity
+            color: const Color.fromARGB(150, 255, 255, 255),
           ),
           const Text(
             'Learn Flutter the fun way!',
             style: TextStyle(color: Colors.white, fontSize: 20),
           ),
           OutlinedButton.icon(
-            onPressed: () {},
+            onPressed: startQuiz,
             style: OutlinedButton.styleFrom(
               foregroundColor: Colors.white,
             ),
