@@ -14,22 +14,31 @@ class Quiz extends StatefulWidget {
 // Underscore used to turn into a private class
 class _QuizState extends State<Quiz> {
   // You can store widgets in regular variable
-  Widget? activeScreen;
+  // Widget? activeScreen;
+  var activeScreen = 'start-screen';
 
-  @override
-  void initState() {
-    activeScreen = HomeScreen(switchScreen);
-    super.initState();
-  }
+  // 1 - Switch Screens approach: using initState.
+  // @override
+  // void initState() {
+  //   activeScreen = HomeScreen(switchScreen);
+  //   super.initState();
+  // }
 
   void switchScreen() {
     setState(() {
-      activeScreen = const QuestionsScreen();
+      activeScreen = 'questions-screen';
     });
   }
 
   @override
   Widget build(context) {
+    Widget screenWidget = HomeScreen(switchScreen);
+
+    // 3 - Switch Screens approach: using if statement.
+    if (activeScreen == 'questions-screen') {
+      screenWidget = const QuestionsScreen();
+    }
+
     return MaterialApp(
       home: Scaffold(
         body: Container(
@@ -43,7 +52,11 @@ class _QuizState extends State<Quiz> {
               end: Alignment.bottomRight,
             ),
           ),
-          child: activeScreen,
+          child: screenWidget,
+          // 2 - Switch Screens approach: using ternary operators.
+          // child: activeScreen == 'start-screen'
+          //     ? HomeScreen(switchScreen)
+          //     : const QuestionsScreen(),
         ),
       ),
     );
