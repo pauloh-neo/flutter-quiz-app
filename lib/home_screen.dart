@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen(this.startQuiz, {super.key});
@@ -18,9 +19,11 @@ class HomeScreen extends StatelessWidget {
             // Better way to add Opacity
             color: const Color.fromARGB(150, 255, 255, 255),
           ),
-          const Text(
+          Text(
             'Learn Flutter the fun way!',
-            style: TextStyle(color: Colors.white, fontSize: 20),
+            style: GoogleFonts.rubik(
+              textStyle: const TextStyle(color: Colors.white, fontSize: 20),
+            ),
           ),
           OutlinedButton.icon(
             onPressed: startQuiz,
