@@ -15,6 +15,7 @@ class Quiz extends StatefulWidget {
 class _QuizState extends State<Quiz> {
   // You can store widgets in regular variable
   // Widget? activeScreen;
+  final List<String> selectedAnswers = [];
   var activeScreen = 'start-screen';
 
   // 1 - Switch Screens approach: using initState.
@@ -23,6 +24,10 @@ class _QuizState extends State<Quiz> {
   //   activeScreen = HomeScreen(switchScreen);
   //   super.initState();
   // }
+
+  void chooseAnswer(String answer) {
+    selectedAnswers.add(answer);
+  }
 
   void switchScreen() {
     setState(() {
@@ -36,7 +41,7 @@ class _QuizState extends State<Quiz> {
 
     // 3 - Switch Screens approach: using if statement.
     if (activeScreen == 'questions-screen') {
-      screenWidget = const QuestionsScreen();
+      screenWidget = QuestionsScreen(onSelectedAnswer: chooseAnswer);
     }
 
     return MaterialApp(
