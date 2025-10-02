@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/data/questions.dart';
-import 'package:quiz_app/models/quiz_questions.dart';
-import 'package:quiz_app/summary_screen.dart';
+import 'package:quiz_app/question_summary/summary_screen.dart';
 
 class ResultScreen extends StatelessWidget {
   const ResultScreen({super.key, required this.choosenAnswers});
@@ -44,9 +43,7 @@ class ResultScreen extends StatelessWidget {
             Text(
               'You answerd $numCorrectQuestions out of $numTotalQuestions questions correctly!',
               textAlign: TextAlign.center,
-              style: const TextStyle(
-                color: Colors.white,
-              ),
+              style: const TextStyle(color: Colors.white, fontSize: 20),
             ),
             const SizedBox(
               height: 30,
